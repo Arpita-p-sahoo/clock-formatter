@@ -13,99 +13,35 @@ export class AppComponent {
   date = new Date();
   formattext:any = "Click the buttons to see the result";
   constructor(){}
-  yyyy_MM_dd_T_HH_mm_ss_SSSZZZZ(){ 
-    let dtstr = this.datepipe.transform(this.date, 'yyyy-MM-ddTHH:mm:ss*SSSZZZZ');
-    this.formattext = dtstr;
-   }
-  yyyy_MMM_dd_HH_mm_ss_SSS_zzz(){
-    let dtstr = this.datepipe.transform(this.date, 'yyyy MMM dd HH:mm:ss.SSS zzz');
-    this.formattext = dtstr;
-    }
-  MMM_dd_HH_mm_ss_ZZZZ_yyyy(){
-    let dtstr = this.datepipe.transform(this.date, 'MMM dd HH:mm:ss ZZZZ yyyy');
+
+  FormatterButtons = [
+    {buttonText:'yyyy-MM-ddTHH:mm:ss*SSSZZZZ',classname:'alert alert-info',format:'yyyy-MM-ddTHH:mm:ss*SSSZZZZ'},
+    {buttonText:'MMM dd HH:mm:ss ZZZZ yyyy',classname:'alert alert-info',format:'MMM dd HH:mm:ss ZZZZ yyyy'},
+    {buttonText:'dd/MMM/yyyy:HH:mm:ss ZZZZ',classname:'alert alert-info',format:'dd/MMM/yyyy:HH:mm:ss ZZZZ'},
+    {buttonText:'MMM dd, yyyy hh:mm:ss a',classname:'alert alert-info',format:'MMM dd, yyyy hh:mm:ss a'},
+    {buttonText:'MMM dd yyyy HH:mm:ss',classname:'alert alert-info',format:'MMM dd yyyy HH:mm:ss'},
+    {buttonText:'MMM dd HH:mm:ss yyyy',classname:'alert alert-info',format:'MMM dd HH:mm:ss yyyy'},
+    {buttonText:'MMM dd HH:mm:ss ZZZZ',classname:'alert alert-info',format:'MMM dd HH:mm:ss ZZZZ'},
+    {buttonText:'MMM dd HH:mm:ss',classname:'alert alert-info',format:'MMM dd HH:mm:ss'},
+    {buttonText:'yyyy-MM-ddTHH:mm:ssZZZZ',classname:'alert alert-info',format:'yyyy-MM-ddTHH:mm:ssZZZZ'},
+    {buttonText:'yyyy-MM-ddTHH:mm:ss.SSSZ',classname:'alert alert-info',format:'yyyy-MM-ddTHH:mm:ss.SSSZ'},
+    {buttonText:'yyyy-MM-dd HH:mm:ss ZZZZ',classname:'alert alert-info',format:'yyyy-MM-dd HH:mm:ss ZZZZ'},
+    {buttonText:'yyyy-MM-dd HH:mm:ssZZZZ',classname:'alert alert-info',format:'yyyy-MM-dd HH:mm:ssZZZZ'},
+    {buttonText:'yyyy-MM-dd HH:mm:ss,SSS',classname:'alert alert-info',format:'yyyy-MM-dd HH:mm:ss,SSS'},
+    {buttonText:'yyyy-MM-dd HH:mm:ss,SSS',classname:'alert alert-info',format:'yyyy-MM-dd HH:mm:ss,SSS'},
+    {buttonText:'yyyy/MM/dd*HH:mm:ss',classname:'alert alert-info',format:'yyyy/MM/dd*HH:mm:ss'},
+    {buttonText:'yyyy-MM-dd HH:mm:ss,SSSZZZZ',classname:'alert alert-info',format:'yyyy-MM-dd HH:mm:ss,SSSZZZZ'},
+    {buttonText:'yyyy-MM-ddTHH:mm:ss.SSS',classname:'alert alert-info',format:'yyyy-MM-ddTHH:mm:ss.SSS'},
+    {buttonText:'yyyy-MM-ddTHH:mm:ssZ',classname:'alert alert-info',format:'yyyy-MM-ddTHH:mm:ssZ'},
+    {buttonText:'yyyy-MM-ddTHH:mm:ss',classname:'alert alert-info',format:'yyyy-MM-ddTHH:mm:ss'},
+    {buttonText:'yyMMdd HH:mm:ss',classname:'alert alert-info',format:'yyMMdd HH:mm:ss'},
+  ]
+
+  formatDateAndTime=(format:string)=>{
+    let dtstr = this.datepipe.transform(this.date, format);
     this.formattext = dtstr;
   }
 
-  dd_MMM_yyyy_HHmm_ss_ZZZZ(){
-    let dtstr = this.datepipe.transform(this.date, 'dd/MMM/yyyy:HH:mm:ss ZZZZ');
-    this.formattext = dtstr;
-  }
-  MMM_dd_yyyy_hh_mm_ss_a(){
-    let dtstr = this.datepipe.transform(this.date, 'MMM dd, yyyy hh:mm:ss a');
-    this.formattext = dtstr;
-  }
-  MMM_dd_yyyy_HH_mm_ss(){
-    let dtstr = this.datepipe.transform(this.date, 'MMM dd yyyy HH:mm:ss');
-    this.formattext = dtstr;
-  }
-  MMM_dd_HH_mm_ss_yyyy(){
-    let dtstr = this.datepipe.transform(this.date, 'MMM dd HH:mm:ss yyyy');
-    this.formattext = dtstr;
-  }
-  MMM_dd_HH_mm_ss_ZZZZ(){
-    let dtstr = this.datepipe.transform(this.date, 'MMM dd HH:mm:ss ZZZZ');
-    this.formattext = dtstr;
-  }
-  MMM_dd_HH_mm_ss(){
-    let dtstr = this.datepipe.transform(this.date, 'MMM dd HH:mm:ss');
-    this.formattext = dtstr;
-  }
-  yyyy_MM_dd_T_HH_mm_ssZZZZ(){
-    let dtstr = this.datepipe.transform(this.date, 'yyyy-MM-ddTHH:mm:ssZZZZ');
-    this.formattext = dtstr;
-  }
-  yyyy_MM_dd_T_HH_mm_ss_SSS_Z(){
-    let dtstr = this.datepipe.transform(this.date, 'yyyy-MM-ddTHH:mm:ss.SSSZ');
-    this.formattext = dtstr;
-  }
-  yyyy_MM_dd_HH_mm_ss_ZZZZ(){
-    let dtstr = this.datepipe.transform(this.date, 'yyyy-MM-dd HH:mm:ss ZZZZ');
-    this.formattext = dtstr;
-  }
-  yyyy_MM_dd_HH_mm_ssZZZZ(){
-    let dtstr = this.datepipe.transform(this.date, 'yyyy-MM-dd HH:mm:ssZZZZ');
-    this.formattext = dtstr;
-  }
-  yyyy_MM_dd_HH_mm_ss_SSS(){
-    let dtstr = this.datepipe.transform(this.date, 'yyyy-MM-dd HH:mm:ss,SSS');
-    this.formattext = dtstr;
-  }
-  yyyy_MM_dd_HH_mm_ss(){
-    let dtstr = this.datepipe.transform(this.date, 'yyyy/MM/dd*HH:mm:ss');
-    this.formattext = dtstr;
-  }
-  yyyy_MM_dd_HH_mm_ss_SSSZZZZ(){
-    let dtstr = this.datepipe.transform(this.date, 'yyyy-MM-dd HH:mm:ss,SSSZZZZ');
-    this.formattext = dtstr;
-  }
-  yyyy_MM_dd_T_HH_mm_ss_SSS(){
-    let dtstr = this.datepipe.transform(this.date, 'yyyy-MM-ddTHH:mm:ss.SSS');
-    this.formattext = dtstr;
-  }
-  yyyy_MM_dd_T_HH_mm_ss_Z(){
-    let dtstr = this.datepipe.transform(this.date, 'yyyy-MM-ddTHH:mm:ssZ');
-    this.formattext = dtstr;
-  }
-  yyyy_MM_dd_T_HH_mm_ss(){
-    let dtstr = this.datepipe.transform(this.date, 'yyyy-MM-ddTHH:mm:ss');
-    this.formattext = dtstr;
-  }
-  yy_MM_dd_HH_mm_ss_SSS_ZZZ(){
-    let dtstr = this.datepipe.transform(this.date, 'yyyy-MM-ddTHH:mm:ss');
-    this.formattext = dtstr;
-  }
-  yy_MM_dd_HH_mm_ss(){
-    let dtstr = this.datepipe.transform(this.date, 'yy-MM-dd HH:mm:ss');
-    this.formattext = dtstr;
-  }
-  yyMMdd_HH_mm_ss(){
-    let dtstr = this.datepipe.transform(this.date, 'yyMMdd HH:mm:ss');
-    this.formattext = dtstr;
-  }
-  MM_dd_yy_HH_mm_ss(){
-    let dtstr = this.datepipe.transform(this.date, 'yyMMdd HH:mm:ss');
-    this.formattext = dtstr;
-  }
 
 
 }

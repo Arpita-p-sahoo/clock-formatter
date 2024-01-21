@@ -1,24 +1,28 @@
 <div class="container mt-4 text-center">
-  <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-          <h3 class="display-4">Today's Date and Time is </h3>
-      </div>
-  </div>
-  <div class="card mt-4 sticky-top">
-      <div class="card-body">
-          <strong> {{formattext}}</strong>
-      </div>
-  </div>
-
-  <div class="row mt-4">
+        <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                        <h3 class="display-4">Today's Date and Time is </h3>
+                </div>
+        </div>
+        <div class="card mt-4 sticky-top">
+                <div class="card-body">
+                        <strong> {{formattext}}</strong>
+                </div>
+        </div>
+        <div class="row mt-4">
+               <ng-container *ngFor="let item of FormatterButtons">
+                <div class="p-2 col-md-2"><button (click)="formatDateAndTime(item.format)" [class]="item.classname"
+                        type="button"> {{item.buttonText}} </button></div>
+               </ng-container>
+                <!-- <div class="row mt-4">
       <div class="p-2 col-lg"><button (click)="yyyy_MM_dd_T_HH_mm_ss_SSSZZZZ()" type="button"
               class="alert alert-success">yyyy-MM-dd'T'HH:mm:ss*SSSZZZZ</button> </div>
       <div class="p-2 col-lg"><button (click)="yyyy_MMM_dd_HH_mm_ss_SSS_zzz()" type="button"
               class="alert alert-warning">yyyy MMM dd HH:mm:ss.SSS zzz</button></div>
       <div class="p-2 col-lg"><button (click)="MMM_dd_HH_mm_ss_ZZZZ_yyyy()" type="button" class="alert alert-dark">MMM dd
               HH:mm:ss ZZZZ yyyy</button></div>
-  </div>
-  <div class="row">
+  </div> -->
+                <!-- <div class="row">
       <div class="p-2 col-lg"><button (click)="dd_MMM_yyyy_HHmm_ss_ZZZZ()" type="button"
               class="alert alert-info">dd/MMM/yyyy:HH:mm:ss ZZZZ</button></div>
       <div class="p-2 col-lg"><button (click)="MMM_dd_yyyy_hh_mm_ss_a()" type="button" class="alert alert-primary">MMM
@@ -27,8 +31,8 @@
               yyyy HH:mm:ss</button></div>
       <div class="p-2 col-lg"><button (click)="MMM_dd_HH_mm_ss()" type="button" class="alert alert-danger">MMM dd
               HH:mm:ss</button></div>
-  </div>
-  <div class="row">
+  </div> -->
+                <!-- <div class="row">
       <div class="p-2 col-lg"><button (click)="MMM_dd_HH_mm_ss_yyyy()" type="button" class="alert alert-danger">MMM dd
               HH:mm:ss yyyy</button></div>
       <div class="p-2 col-lg"><button (click)="MMM_dd_HH_mm_ss_ZZZZ()" type="button" class="alert alert-dark">MMM dd
@@ -71,6 +75,6 @@
       <div class="p-2 col-lg"><button (click)="yyMMdd_HH_mm_ss()" type="button" class="alert alert-success">yyMMdd
               HH:mm:ss</button></div>
   </div>
- 
+  -->
 
-</div>
+        </div>
